@@ -16,22 +16,39 @@ class TableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        Alamofire.request("http://opendata.euskadi.eus/contenidos/ds_eventos/eventos_turisticos/opendata/agenda.json", method: .get).validate().responseString { response in
+        
+        // REF: Desactivar verificación de HTTPS: https://stackoverflow.com/a/30732693/5136913
+        let url = "http://opendata.euskadi.eus/contenidos/ds_eventos/eventos_turisticos/opendata/agenda.json"
+        
+        // No podemos usar .responseJSON(), porque no es un JSON válido
+        Alamofire.request(url, method: .get).validate().responseString { response in
             switch response.result {
             case .success(let value):
-                self.json = JSON(value)
-                //print("JSON: \(json)")
+                
+                // Arreglamos los desperfectos
+                var temp = value.dropFirst(13) // jsonCallback(
+                temp = temp.dropLast(2) // );
+                // La codificación de caractéres tampoco es válida, debería ser .utf8
+                if let dataFromString = temp.data(using: .isoLatin1, allowLossyConversion: false) {
+                    
+                    // Convertir el String en JSON con SwiftyJSON
+                    self.json = try! JSON(data: dataFromString)
+                    
+                    // Pedir la recarga de la tabla
+                    self.tableView.reloadData()
+                }
+                
             case .failure(let error):
                 print(error)
             }
+        }
         }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -55,8 +72,7 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "miCelda", for: indexPath)
 
-        // Configure the cell...
-        
+        cell.textLabel?.text = json[indexPath.row]["documentName"].string
         return cell
     }
     
