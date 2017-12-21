@@ -10,6 +10,7 @@
 		42F63669B9A4B00E7694B26E /* Pods_euskoEvents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C44E7311F7DD7C823FC3DAC /* Pods_euskoEvents.framework */; };
 		8326228D1FD099A50056FCF1 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8326228C1FD099A50056FCF1 /* TableViewController.swift */; };
 		8326228F1FD099C50056FCF1 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8326228E1FD099C50056FCF1 /* TableViewCell.swift */; };
+		83A03C431FEC3BE600EA6BE7 /* InicioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A03C421FEC3BE600EA6BE7 /* InicioViewController.swift */; };
 		83E2E4321FD0945700956562 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E2E4311FD0945700956562 /* AppDelegate.swift */; };
 		83E2E4371FD0945700956562 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83E2E4351FD0945700956562 /* Main.storyboard */; };
 		83E2E4391FD0945700956562 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83E2E4381FD0945700956562 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		8326228C1FD099A50056FCF1 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		8326228E1FD099C50056FCF1 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		83A03C421FEC3BE600EA6BE7 /* InicioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InicioViewController.swift; sourceTree = "<group>"; };
 		83E2E42E1FD0945700956562 /* euskoEvents.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = euskoEvents.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83E2E4311FD0945700956562 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83E2E4361FD0945700956562 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				83E2E43D1FD0945700956562 /* Info.plist */,
 				8326228C1FD099A50056FCF1 /* TableViewController.swift */,
 				8326228E1FD099C50056FCF1 /* TableViewCell.swift */,
+				83A03C421FEC3BE600EA6BE7 /* InicioViewController.swift */,
 			);
 			path = euskoEvents;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				8326228F1FD099C50056FCF1 /* TableViewCell.swift in Sources */,
 				83E2E4321FD0945700956562 /* AppDelegate.swift in Sources */,
 				8326228D1FD099A50056FCF1 /* TableViewController.swift in Sources */,
+				83A03C431FEC3BE600EA6BE7 /* InicioViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
